@@ -1,7 +1,7 @@
 # M_3DModelGenerator
 Simple Gradio App, based on Hunyuan3D model, to generate 3D models from images.
 
-# Gettin Started
+# Getting Started
 ## Requirements
 Before install the app, be sure to have `Python 3` and to install [CUDA Toolkit v12.9](https://developer.nvidia.com/cuda-12-9-0-download-archive) with the environment variable `CUDA_HOME` properly pointing at the installation path (required by PyTorch).
 ## Install
