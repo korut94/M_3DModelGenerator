@@ -34,7 +34,7 @@ try:
     print("Installing PyTorch...")
     subprocess.check_call([pip_path, "install", "torch", "torchvision", "--index-url", pytorch_cuda_url])
 
-    print(f"Download {hunyuan_url}...")
+    print(f"Downloading {hunyuan_url}...")
     urllib.request.urlretrieve(hunyuan_url, hunyuan_zip_path)
 
     print(f"Extracting Hunyuan3D-2...")
