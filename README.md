@@ -24,7 +24,7 @@ Double-click on the batch file:
 run_app.bat
 ```
 ### Linux
-In the command line, activate the virtual environemtn in `venv` directory: 
+In the command line, activate the virtual environment in `venv` directory: 
 ```
 ./venv/Scripts/activate
 ```
