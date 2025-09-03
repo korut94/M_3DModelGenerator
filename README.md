@@ -1,5 +1,5 @@
 # M_3DModelGenerator
-Simple Gradio App, based on Hunyuan3D model, to generate 3D models from images.
+Simple Gradio App, based on Hunyuan3D-2 model, to generate 3D models from images.
 
 # Getting Started
 ## Requirements
