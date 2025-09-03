@@ -16,7 +16,7 @@ In the command line, run the python script:
 python ./Scripts/install.py
 ```
 ## Run the app
-Once the installation process is terminated succesfully, the working directory will containt: `Hunyuan3D-main` directoy, python virtual environment directory `vevn` and the script `run.bat`.
+Once the installation process is terminated succesfully, the working directory will containt: `Hunyuan3D-main` directoy, python virtual environment directory `vevn` and the script `run_app.bat`.
 To run the application:
 ### Windows
 Double-click on the batch file:
