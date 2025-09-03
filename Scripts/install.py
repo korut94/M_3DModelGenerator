@@ -12,6 +12,9 @@ pytorch_cuda_url = "https://download.pytorch.org/whl/cu129"
 hunyuan_url = "https://github.com/Tencent-Hunyuan/Hunyuan3D-2/archive/refs/heads/main.zip"
 hunyuan_name = "Hunyuan3D-2-main"
 
+# Run script
+run_script_name = "run_app.bat"
+
 # Working directories
 temp_dir = tempfile.gettempdir()
 work_dir = os.getcwd()
@@ -51,7 +54,7 @@ try:
     venv_activate_path = os.path.join(venv_dir, "Scripts", "activate.bat")
 
     print("Creating run script...")
-    with open('run.bat', 'w') as file:
+    with open(f'{run_script_name}', 'w') as file:
         file.write(
             '@echo off\n'\
             'setlocal\n'\
