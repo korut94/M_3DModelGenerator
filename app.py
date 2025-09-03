@@ -3,19 +3,17 @@ import torch
 from PIL import Image
 from hy3dgen.rembg import BackgroundRemover
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
+import os
+import tempfile
+
+temp_dir = tempfile.gettempdir()
+mesh_format = 'glb'
 
 pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(
     'tencent/Hunyuan3D-2',
     subfolder='hunyuan3d-dit-v2-0',
     variant='fp16'
 )
-
-fast_pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(
-    'tencent/Hunyuan3D-2',
-    subfolder='hunyuan3d-dit-v2-0-turbo',
-    use_safetensors=True,
-)
-fast_pipeline.enable_flashvdm()
 
 def process_image(image_path, seed):
     image = Image.open(image_path).convert("RGBA")
@@ -32,12 +30,12 @@ def process_image(image_path, seed):
         output_type='trimesh'
         )[0]
     
-    temp_mesh_path = 'demo.glb'
+    mesh_name = os.path.splitext(os.path.basename(image_path))[0]
+    temp_mesh_path = os.path.join(temp_dir, f'{mesh_name}-{seed}.{mesh_format}')
 
+    print(f"Exporting mesh to {temp_mesh_path}...")
     mesh.export(temp_mesh_path)
     return temp_mesh_path
-
-preview_models = [gr.Model3D(), gr.Model3D(), gr.Model3D(), gr.Model3D()]
 
 with gr.Blocks() as demo:
     with gr.Row():
